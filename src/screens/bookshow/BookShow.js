@@ -35,15 +35,17 @@ const BookShow = (props) => {
 
   useEffect(() => {
     let dataShows = null;
+    let myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
 
-    fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-cache",
-      },
-      body: dataShows,
-    })
+    let requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    let requestUrl = "http://localhost:8085/api/v1/movies/" + props.match.params.id + "/shows?page=1&limit=10";
+    fetch(requestUrl, requestOptions)
+
       .then((response) => response.json())
       .then((response) => {
         setOriginalShows(response.shows);
