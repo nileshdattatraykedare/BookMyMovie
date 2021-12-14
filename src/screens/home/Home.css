@@ -1,0 +1,27 @@
+.promoBar{
+    background: #ff7f7f;
+    color:#222;
+    padding: 8px 0;
+    text-align: center;
+}
+.currentContainer{
+    margin-top: 30px;
+    padding: 0 20px;
+}
+.upComingContainer{
+    overflow: hidden;
+}
+
+.MuiImageListItem-item a{
+    display: block;
+    height: 100%;
+}
+.MuiImageListItem-item img{
+    width: 100%;;
+}
+.theme-primary-color{
+    color:#4791db;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
